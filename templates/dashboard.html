@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluestock Fintech Dashboard</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}"> <!-- Link to your CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <div class="logo-circle">BF</div>
+          <a href="Admin.html" class="logo-text">Bluestock Fintech</a>
+        </div>
+        <div class="menu-section">
+          <h3>MENU</h3>
+          <ul>
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-chart-simple"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'manage_ipo' %}">
+                    <i class="fa-solid fa-cart-shopping"></i> Manage IPO
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-file-signature"></i> IPO Subscription
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-list-alt"></i> IPO Allotment
+                </a>
+            </li>
+          </ul>
+        </div>
+        <div class="others-section">
+          <h3>OTHERS</h3>
+          <ul>
+          <li>
+            <a href="#">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-server"></i> API Manager
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-user-circle"></i> Accounts
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-question-circle"></i> Help
+            </a>
+        </li>
+    </ul>
+
+        </div>
+      </div>
+      <main class="main-content">
+        <header class="topbar">
+            <div class="search-container">
+                <input type="text" placeholder="Search" class="search-input">
+                <button class="search-button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+          <div class="user-info">
+            <span class="username">Hi, {{ username }}</span> <!-- Dynamically showing the username -->
+            <a href="user.html" class="user-avatar">{{ username|slice:":1" }}</a> <!-- Getting the first character of the username -->
+            <div class="notification-icon">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+          </div>
+        </header>
+  
+        <!-- Dashboard Content -->
+        <section class="dashboard">
+          <div class="dashboard-section ipo-dashboard">
+            <h2>IPO Dashboard India</h2>
+            <div class="circles">
+              <div class="circle gain">
+                <span class="circle-text">20</span>
+                <span class="circle-subtext">IPO in Gain</span>
+              </div>
+              <div class="circle loss">
+                <span class="circle-text">9</span>
+                <span class="circle-subtext">IPO in Loss</span>
+              </div>
+              <div class="circle total">
+                <span class="circle-text">30</span>
+                <span class="circle-subtext">Total IPO</span>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-section quick-links">
+            <h2>Quick Links</h2>
+            <p>Adipiscing elit, sed do eiusmod tempor.</p>
+            <ul class="quick-links-list">
+              <li>
+                <span class="link-icon"></span>
+                NSE India
+                <a
+                  href="https://www.nseindia.com/"
+                  target="_blank"
+                  class="visit-now"
+                  >Visit Now</a>
+              </li>
+              <li>
+                <span class="link-icon bse"></span>
+                BSE India
+                <a
+                  href="https://www.bseindia.com/"
+                  target="_blank"
+                  class="visit-now"
+                  >Visit Now</a>
+              </li>
+              <li>
+                <span class="link-icon sebi"></span>
+                SEBI
+                <a
+                  href="https://www.sebi.gov.in/"
+                  target="_blank"
+                  class="visit-now"
+                  >Visit Now</a>
+              </li>
+              <li>
+                <span class="link-icon money-control"></span>
+                Money Control
+                <a
+                  href="https://www.moneycontrol.com/"
+                  target="_blank"
+                  class="visit-now"
+                  >Visit Now</a>
+              </li>
+            </ul>
+          </div>
+          <div class="dashboard-section main-board-ipo">
+            <div class="ipo-header">
+              <h2>Main Board IPO</h2>
+              <a href="#" class="view-report-btn">View Report</a>
+            </div>
+            <p>From 01 Jan 2024</p>
+            <div class="report-chart">
+              <div class="report-circle">
+                <div class="report-text">
+                  <span class="report-time">Afternoon</span>
+                  <span class="report-value">15</span>
+                </div>
+              </div>
+              <div class="report-legend">
+                <ul>
+                  <li><span class="legend-color upcoming"></span> Upcoming 15</li>
+                  <li>
+                    <span class="legend-color new-listed"></span> New Listed 25
+                  </li>
+                  <li><span class="legend-color ongoing"></span> Ongoing 2</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </body>
+</html>

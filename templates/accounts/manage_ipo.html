@@ -1,0 +1,27 @@
+<h1>Manage IPO</h1>
+
+<p>Welcome, {{ user.username }}!</p>
+{% if user.is_superuser %}
+    <a href="{% url 'register_ipo' %}" class="btn btn-primary">Register IPO</a>
+{% endif %}
+
+<!-- Display IPOS -->
+{% if ipos %}
+    <div>
+        {% for ipo in ipos %}
+            <div>
+                <h3>{{ ipo.company_name }}</h3>
+                <p>Price Band: {{ ipo.price_band }}</p>
+                <p>Open Date: {{ ipo.open_date }}</p>
+                <p>Close Date: {{ ipo.close_date }}</p>
+                <p>Issue Size: {{ ipo.issue_size }}</p>
+                <p>Issue Type: {{ ipo.issue_type }}</p>
+                <p>Listing Date: {{ ipo.listing_date }}</p>
+                <p>RHP: <a href="{{ ipo.rhp_pdf.url }}">Download</a></p>
+                <p>DRHP: <a href="{{ ipo.drhp_pdf.url }}">Download</a></p>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No IPOs available.</p>
+{% endif %}

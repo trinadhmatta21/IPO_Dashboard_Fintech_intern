@@ -1,0 +1,20 @@
+<h1>Register IPO</h1>
+
+<p>Welcome, {{ user.username }}! Only superusers can register an IPO.</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <!-- Your input fields for IPO registration -->
+    <input type="text" name="company_logo" placeholder="Company Logo" required>
+    <input type="text" name="company_name" placeholder="Company Name" required>
+    <input type="text" name="price_band" placeholder="Price Band" required>
+    <input type="date" name="open_date" required>
+    <input type="date" name="close_date" required>
+    <input type="number" name="issue_size" placeholder="Issue Size" required>
+    <input type="text" name="issue_type" placeholder="Issue Type" required>
+    <input type="date" name="listing_date" required>
+    <input type="file" name="rhp_pdf" required>
+    <input type="file" name="drhp_pdf" required>
+
+    <button type="submit">Register IPO</button>
+</form>

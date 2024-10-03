@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Bluestock Fintech</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="login-form">
+        <a href="/" class="logo-link">
+            <img src="{% static 'images/sigininlogo.png' %}" alt="Bluestock Logo" class="logo-image">
+        </a>
+        <h3>Create an account</h3>
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            <label for="username">Name</label>
+            <input type="text" name="username" placeholder="Saisha Wagh" required>
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="hello@bluestoke.in" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="..........." required>
+            <button type="submit">Sign up</button>
+        </form>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>Already have an account? <a href="{% url 'signin' %}">Sign In</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin - Bluestock Fintech</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+</head>
+<body>
+    <div class="login-form">
+        <a href="/" class="logo-link">
+            <img src="{% static 'images/sigininlogo.png' %}" alt="Bluestock Logo" class="logo-image">
+        </a>
+        <form method="post" action="{% url 'signin' %}">
+            {% csrf_token %}
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="johndoe@gmail.com" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="............" required>
+            <button type="submit">Login</button>
+        </form>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p><a href="/forgot-password/">Forgot Password?</a> | <a href="{% url 'signup' %}">Create an account</a></p>
+    </div>
+</body>
+</html>

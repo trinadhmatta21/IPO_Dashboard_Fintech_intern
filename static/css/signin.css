@@ -1,0 +1,131 @@
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+/* Login Form Container */
+.login-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Bluestock Heading as a Link */
+.login-form a.home-link h1 {
+    color: #08080f;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form a.home-link h1:hover {
+    color: #4941C1;
+}
+
+/* Email and Password Input Fields */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* CAPTCHA Checkbox */
+.captcha {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.captcha input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Remember Me Checkbox */
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Submit Button Styling */
+button {
+    background-color: #5B51D8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #4941C1;
+}
+
+/* Google Login Button */
+.alternate-login button {
+    background-color: #4285F4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.alternate-login button:hover {
+    background-color: #357AE8;
+}
+
+/* Links Under the Form */
+p a {
+    color: #5B51D8;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.logo-link {
+    display: block;
+    text-align: center;  /* Centers the logo */
+    margin-bottom: 20px;  /* Adds space below the logo */
+}
+
+.logo-image {
+    width: 150px;  /* Adjust the size of the logo */
+    cursor: pointer;  /* Makes it clear the logo is clickable */
+    transition: transform 0.3s ease;  /* Adds a smooth hover effect */
+}
+
+.logo-image:hover {
+    transform: scale(1.1);  /* Slightly enlarges the logo on hover */
+}
+
+label{
+    display: flex;
+    align-items: start;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 500;
+}

@@ -1,0 +1,66 @@
+<!-- bluestock/templates/accounts/userside_ipo.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Listings</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .ipo-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .ipo-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .ipo-logo {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .ipo-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .ipo-info h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .ipo-details {
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upcoming IPOs</h1>
+    <div class="ipo-list">
+        {% for ipo in ipos %}
+        <div class="ipo-container">
+            <div class="ipo-header">
+                <img src="{{ ipo.company_logo.url }}" alt="{{ ipo.company_name }}" class="ipo-logo">
+                <div class="ipo-info">
+                    <h2>{{ ipo.company_name }}</h2>
+                    <p>Price Band: {{ ipo.price_band }}</p>
+                    <p>Open Date: {{ ipo.open_date }}</p>
+                    <p>Close Date: {{ ipo.close_date }}</p>
+                    <p>Issue Size: {{ ipo.issue_size }}</p>
+                    <p>Issue Type: {{ ipo.issue_type }}</p>
+                </div>
+            </div>
+            <div class="ipo-details">
+                <p>Listing Date: {{ ipo.listing_date }}</p>
+                <p><a href="{{ ipo.rhp_pdf.url }}">Download RHP PDF</a> | <a href="{{ ipo.drhp_pdf.url }}">Download DRHP PDF</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
